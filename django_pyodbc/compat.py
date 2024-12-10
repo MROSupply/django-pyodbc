@@ -60,14 +60,12 @@ except ImportError:
     timezone = None
 
 try:
-    from django.utils.encoding import force_text
-except ImportError:
-    from django.utils.encoding import force_unicode as force_text
-
-try:
     from django.utils.encoding import smart_text
 except ImportError:
-    from django.utils.encoding import smart_unicode as smart_text
+    try:
+        from django.utils.encoding import smart_unicode as smart_text
+    except ImportError:
+        from django.utils.encoding import smart_str as smart_text
 
 # new modules from Django1.5
 try:
