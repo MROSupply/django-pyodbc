@@ -38,7 +38,7 @@ from .models import Event, MaybeEvent, Session, SessionEvent, Timestamp, AllDayE
 # datetime.datetime(2011, 9, 1, 13, 20, 30), which translates to
 # 10:20:30 in UTC and 17:20:30 in ICT.
 
-UTC = timezone.utc
+UTC = datetime.timezone.utc
 EAT = FixedOffset(180)      # Africa/Nairobi
 ICT = FixedOffset(420)      # Asia/Bangkok
 

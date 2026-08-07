@@ -2,8 +2,8 @@
 
 # Unit tests for cache framework
 # Uses whatever cache backend is set in the test settings file.
-from __future__ import absolute_import, unicode_literals
 
+import datetime
 import hashlib
 import os
 import random
@@ -1458,7 +1458,7 @@ class CacheI18nTest(TestCase):
     @override_settings(USE_I18N=False, USE_L10N=False, USE_TZ=True)
     def test_cache_key_with_non_ascii_tzname(self):
         # Regression test for #17476
-        class CustomTzName(timezone.UTC):
+        class CustomTzName(datetime.timezone.UTC):
             name = ''
             def tzname(self, dt):
                 return self.name

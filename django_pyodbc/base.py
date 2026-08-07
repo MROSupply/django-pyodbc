@@ -523,7 +523,7 @@ class CursorWrapper(object):
                 row = row.decode(self.encoding)
 
             elif needs_utc and isinstance(row, datetime.datetime):
-                row = row.replace(tzinfo=timezone.utc)
+                row = row.replace(tzinfo=datetime.timezone.utc)
             fr.append(row)
         return tuple(fr)
 
